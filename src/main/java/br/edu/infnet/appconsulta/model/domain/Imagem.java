@@ -1,0 +1,5 @@
+package br.edu.infnet.appconsulta.model.domain;
+
+public class Imagem extends Exame {
+
+}
