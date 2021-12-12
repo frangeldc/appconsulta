@@ -1,5 +1,6 @@
 package br.edu.infnet.appconsulta.model.tests;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,26 +14,20 @@ import br.edu.infnet.appconsulta.model.domain.Medico;
 public class ConsultaTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Imagem imagem = new Imagem();
-		// atributo 1
-		// atributo 2
-		// atributo 3
-		Laboratorial laboratorial = new Laboratorial();
-		// atributo 1
-		// atributo 2
-		// atributo 3
-		Fisico fisico = new Fisico();	
-		// atributo 1
-		// atributo 2
-		// atributo 3
+		Imagem imagem = new Imagem("fratura", LocalDateTime.now(), 89.99);
+		Fisico fisico = new Fisico("pressao alta", LocalDateTime.now(), 199.99);
+		Fisico fisico2 = new Fisico("obesidade", LocalDateTime.now(), 59.99);
+		Laboratorial laboratorial = new Laboratorial("colesterol alto", LocalDateTime.now(), 199.99);
+
 		
 		List<Exame> exames = new ArrayList<Exame>();
 		exames.add(imagem);
-		exames.add(laboratorial);
+		exames.add(fisico2);
 		exames.add(fisico);
+		exames.add(laboratorial);
+
 		
-		Medico medico = new Medico();
+//		Medico medico = new Medico();
 		
 		Consulta consulta = new Consulta();
 		// atributo 1
@@ -42,7 +37,10 @@ public class ConsultaTest {
 		consulta.setId(1); // atributo 1
 		// atributo 2
 		// atributo 3
-		consulta.setMedico(medico);
+//		consulta.setMedico(medico);
+		
+		consulta.setExames(exames);
+		System.out.println(consulta);
 	}
 
 }

@@ -1,19 +1,24 @@
 package br.edu.infnet.appconsulta.model.domain;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Consulta {
 	
 	private Integer id;
 	private LocalDateTime data; // atributo 1
-	// atributo 2
-	// atributo 3
-	private  Medico medico;
+	private List<String> receituario; // atributo 2
+	private String endereco ;// atributo 3
+//	private String telContato;
+	private Medico medico;
 	private List<Exame> exames;
 	
 	public Consulta() {
-		data = LocalDateTime.now();
+		this.data = LocalDateTime.now();
+		this.endereco = "Rua do 2";
+//		this.receituario.add("Remedio para dor de cabeça");
+//		this.receituario.add("Remedio para tosse");
 	}
 
 	public Integer getId() {
@@ -22,6 +27,22 @@ public class Consulta {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public List<String> getReceituario() {
+		return receituario;
+	}
+
+	public void setReceituario(List<String> receituario) {
+		this.receituario = receituario;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public Medico getMedico() {
@@ -46,7 +67,9 @@ public class Consulta {
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		
+		return String.format("%s; %s; %d", this.data.format(formato), endereco, exames.size());
 	}
 	
 	
