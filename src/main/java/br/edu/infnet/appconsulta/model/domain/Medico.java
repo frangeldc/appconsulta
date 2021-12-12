@@ -1,46 +1,83 @@
 package br.edu.infnet.appconsulta.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import br.edu.infnet.appconsulta.model.domain.Usuario;
+
+@Entity
+@Table(name = "TMedico")
 public class Medico {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String cpf;
+	private String email;
 	private String crm;// atributo 1
-	private String especialidade;// atributo 2
-	private int idade;// atributo 3
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+		
+	public Medico() {}
 	
-	StringBuilder sb = new StringBuilder("name");
-	
-	public Medico(String nome, String cpf, String crm, String especialidade, int idade) {
+	public Medico(String nome, String email, String crm) {
 		super();
 		this.nome = nome;
-		this.cpf = cpf;
+		this.email = email;
 		this.crm = crm;
-		this.especialidade = especialidade;
-		this.idade = idade;
 	}
 
 	public Integer getId() {
 		return id;
 	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
-	public String getCPF() {
-		return cpf;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public String getCRM() {
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCrm() {
 		return crm;
 	}
-	public String getEspecialidade() {
-		return especialidade;
+
+	public void setCrm(String crm) {
+		this.crm = crm;
 	}
-	public int getIdade() {
-		return idade;
+
+	public Usuario getUsuario() {
+		return usuario;
 	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 
 	@Override
 	public String toString() {
-		return sb.append(nome+';').append(cpf+';').append(crm+';').append(especialidade+';').append(idade+';').toString();
+		StringBuilder sb = new StringBuilder("name");
+		return sb.append(nome+';').append(email+';').append(crm+';').toString();
 	}
 	
 }

@@ -9,9 +9,9 @@
 <body>
 
 	<div class="container mt-3">
-	  <h2>O aluno ${nome} foi cadastrado com sucesso!!!</h2>
+	  <h2>O medico ${nome} foi cadastrado com sucesso!!!</h2>
 	  
-	  <form action="/alunos" method="get">
+	  <form action="medicos" method="get">
 	    <button type="submit" class="btn btn-primary">Voltar</button>
 	  </form>
 	</div>

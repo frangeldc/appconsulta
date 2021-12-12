@@ -15,6 +15,6 @@
 		inteligente, colaborativo, criativo, adaptativo.</p>
 	<p>Profissionalmente: Graduado em Engenharia Eletrica Enfase em computacao 
 		pela UERJ, estudante de MIT Engenharia de computacao com Java Infnet</p>
-	<h4><a href="/aluno">Alunos</a></h4>
+	<h4><a href="/medico">Medicos</a></h4>
 </body>
 </html>
