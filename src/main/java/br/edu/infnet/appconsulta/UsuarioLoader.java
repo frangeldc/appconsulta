@@ -20,7 +20,7 @@ public class UsuarioLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		Usuario usuario = new Usuario();
-		usuario.setEmail("filipe@al.infnet.edu.br");
+		usuario.setEmail("filipe.rcosta@al.infnet.edu.br");
 		usuario.setNome("Filipe Rangel");
 		usuario.setSenha("123");
 		usuario.setAdmin(true);
