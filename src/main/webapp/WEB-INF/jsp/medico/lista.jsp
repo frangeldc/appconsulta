@@ -20,7 +20,7 @@
 		</div>	  
 	  </c:if>
 
-	  <form action="medico" method="get">
+	  <form action="/medico" method="get">
 	    <button type="submit" class="btn btn-primary">Novo</button>
 	  </form>
 	  
@@ -35,20 +35,20 @@
 		        <th>ID</th>
 		        <th>Nome</th>
 		        <th>E-mail</th>
-		        <th>CPF</th>
+		        <th>CRM</th>
 		        <th>Usuário</th>
 		        <th></th>
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <c:forEach var="s" items="${lista}">
+		      <c:forEach var="m" items="${lista}">
 			      <tr>
-			        <td>${s.id}</td>
-			        <td>${s.nome}</td>
-			        <td>${s.email}</td>
-			        <td>${s.cpf}</td>
-			        <td>${s.usuario.nome}</td>
-			        <td><a href="/medico/${s.id}/excluir">excluir</a></td>
+			        <td>${m.id}</td>
+			        <td>${m.nome}</td>
+			        <td>${m.email}</td>
+			        <td>${m.crm}</td>
+			        <td>${m.usuario.nome}</td>
+			        <td><a href="/medico/${m.id}/excluir">excluir</a></td>
 			      </tr>
 		      </c:forEach>		      
 		    </tbody>

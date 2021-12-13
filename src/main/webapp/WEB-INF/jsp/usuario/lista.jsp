@@ -22,7 +22,7 @@
 		      <tr>
 		        <th>ID</th>
 		        <th>Nome</th>
-		        <th>CRM</th>
+		        <th>E-mail</th>
 		        <th>Medicos</th>
 		        <c:if test="${user.admin}">
 		        	<th></th>

@@ -12,6 +12,6 @@ import br.edu.infnet.appconsulta.model.domain.Medico;
 @Repository
 public interface MedicoRepository extends CrudRepository<Medico, Integer> {
 
-	@Query("from Medico s where s.usuario.id = :userid")
+	@Query("from Medico m where m.usuario.id = :userid")
 	public List<Medico> findAll(Integer userid);
 }

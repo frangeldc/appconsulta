@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import br.edu.infnet.appconsulta.model.domain.Usuario;
-
 @Entity
 @Table(name = "TMedico")
 public class Medico {
@@ -19,15 +17,16 @@ public class Medico {
 	private Integer id;
 	private String nome;
 	private String email;
-	private String crm;// atributo 1
+	private String crm;
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 		
-	public Medico() {}
+	public Medico() {
+		//
+	}
 	
 	public Medico(String nome, String email, String crm) {
-		super();
 		this.nome = nome;
 		this.email = email;
 		this.crm = crm;
@@ -64,7 +63,7 @@ public class Medico {
 	public void setCrm(String crm) {
 		this.crm = crm;
 	}
-
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -73,11 +72,12 @@ public class Medico {
 		this.usuario = usuario;
 	}
 
-
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder("name");
-		return sb.append(nome+';').append(email+';').append(crm+';').toString();
+		sb.append(id+';').append(nome+';').append(email+';').append(crm+';');
+		
+		return sb.toString();
 	}
 	
 }
