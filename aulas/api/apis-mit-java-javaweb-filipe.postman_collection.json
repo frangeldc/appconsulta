@@ -1,0 +1,615 @@
+{
+	"info": {
+		"_postman_id": "7272b098-5ae7-44b2-948a-3ea67ba6cbad",
+		"name": "apis-mit-java-javaweb-filipe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-usuario:8081",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8081/api/usuario/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedrinho\",\r\n    \"email\": \"pedro@pedro.com\",\r\n    \"senha\": \"123\",\r\n    \"admin\": false,\r\n    \"endereco\": {\r\n        \"cep\": \"88888-999\",\r\n        \"logradouro\": \"Rua teste\",\r\n        \"complemento\": \"Complemento teste\",\r\n        \"bairro\": \"Bairro teste\",\r\n        \"localidade\": \"Localidade teste\",\r\n        \"uf\": \"RJ\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/api/usuario/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8081/api/usuario/4/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "validar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/usuario/validar?email=filipe.rcosta@al.infnet.edu.br&senha=123",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"validar"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "filipe.rcosta@al.infnet.edu.br"
+								},
+								{
+									"key": "senha",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "qtde",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8081/api/usuario/qtde"
+					},
+					"response": []
+				},
+				{
+					"name": "obterPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8081/api/usuario/1/obter"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-medico:8084",
+			"item": [
+				{
+					"name": "medico-listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/api/medico/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "medico-listaByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/api/medico/7/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "medico-incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ricardo Rangel da Costa\",\r\n    \"email\": \"ricardo@rangel.com\",\r\n    \"crm\": \"12312322312\",\r\n    \"endereco\": {\r\n        \"cep\": \"88888-999\",\r\n        \"logradouro\": \"Rua teste\",\r\n        \"complemento\": \"Complemento teste\",\r\n        \"bairro\": \"Bairro teste\",\r\n        \"localidade\": \"Localidade teste\",\r\n        \"uf\": \"RJ\"\r\n    },\r\n    \"usuario\": {\r\n        \"id\": \"1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/api/medico/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "medico-excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8084/api/medico/5/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "medico-qtde",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/api/medico/qtde"
+					},
+					"response": []
+				},
+				{
+					"name": "medico-obterPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/api/medico/1/obter"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-exame:8083",
+			"item": [
+				{
+					"name": "Imagem",
+					"item": [
+						{
+							"name": "imagem-incluir",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipo\": \"Imagem\",\r\n    \"descricao\": \"imagem de xxx\",\r\n    \"preco\": 999.0,\r\n    \"laudo\": \"Imagem do xxx com yyy\",\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    },\r\n    \"area\": \"Area do exame\",\r\n    \"radioativo\": true,\r\n    \"contraste\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/api/exame/incluir/imagem"
+							},
+							"response": []
+						},
+						{
+							"name": "imagem-listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/listar/imagem"
+							},
+							"response": []
+						},
+						{
+							"name": "imagem-qtde",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/qtde/imagem"
+							},
+							"response": []
+						},
+						{
+							"name": "imagem-listaByUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/1/listar/imagem"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Laboratorial",
+					"item": [
+						{
+							"name": "laboratorial-incluir",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipo\": \"Laboratorial\",\r\n    \"descricao\": \"laboratorial de xxx\",\r\n    \"preco\": 999.0,\r\n    \"laudo\": \"Laboratorial do xxx com yyy\",\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    },\r\n    \"tipoSangue\": \"A+\",\r\n    \"idade\": \"20\",\r\n    \"jejum\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/api/exame/incluir/laboratorial"
+							},
+							"response": []
+						},
+						{
+							"name": "laboratorial-listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/listar/laboratorial"
+							},
+							"response": []
+						},
+						{
+							"name": "laboratorial-qtde",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/qtde/laboratorial"
+							},
+							"response": []
+						},
+						{
+							"name": "laboratorial-listaByUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/3/listar/laboratorial"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Fisico",
+					"item": [
+						{
+							"name": "fisico-incluir",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tipo\": \"Fisico\",\r\n    \"descricao\": \"Fisico de xxx\",\r\n    \"preco\": 999.0,\r\n    \"laudo\": \"Fisico do xxx com yyy\",\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    },\r\n    \"temperatura\": 37.8,\r\n    \"pressao\": \"12/8\",\r\n    \"peso\": 80,\r\n    \"altura\": 180\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/api/exame/incluir/fisico"
+							},
+							"response": []
+						},
+						{
+							"name": "fisico-listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/listar/fisico"
+							},
+							"response": []
+						},
+						{
+							"name": "fisico-qtde",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/qtde/fisico"
+							},
+							"response": []
+						},
+						{
+							"name": "fisico-listaByUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8083/api/exame/1/listar/fisico"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "exame-listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8083/api/exame/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "exame-obterPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8083/api/exame/4"
+					},
+					"response": []
+				},
+				{
+					"name": "exame-listaByUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/exame/1/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"exame",
+								"1",
+								"listar"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exame-excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8083/api/exame/2/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "exame-qtde",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8083/api/exame/qtde"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-consulta:8082",
+			"item": [
+				{
+					"name": "consulta-listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8082/api/consulta/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "consulta-obterPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8082/api/consulta/1/obter"
+					},
+					"response": []
+				},
+				{
+					"name": "consulta-listaByUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8082/api/consulta/1/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "consulta-excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8082/api/consulta/2/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "consulta-incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"local\": \"postman\",\r\n    \"especialidade\": \"Cardiologia\",\r\n    \"medico\": {\r\n        \"id\": 1\r\n    },\r\n    \"exames\": [\r\n        {\r\n            \"tipo\": \"Imagem\",\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"tipo\": \"Laboratorial\",\r\n            \"id\": 3\r\n        },\r\n                {\r\n            \"tipo\": \"Fisico\",\r\n            \"id\": 4\r\n        }\r\n    ],\r\n    \"usuario\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/api/consulta/incluir"
+					},
+					"response": []
+				},
+				{
+					"name": "consulta-qtde",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/api/consulta/qtde"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-log:8085",
+			"item": [
+				{
+					"name": "log-listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "123",
+								"username": "elberth"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8085/api/log/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "log-excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8085/api/log/2/excluir"
+					},
+					"response": []
+				},
+				{
+					"name": "log-incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Planilha 3 foi gerada\",\r\n    \"data\": \"2022-02-17T15:49:42\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8085/api/log/incluir"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
