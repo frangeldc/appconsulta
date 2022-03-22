@@ -47,6 +47,9 @@
 										<c:when test="${user.id != u.id}">
 											<td><a href="/usuario/${u.id}/excluir">excluir</a>
 										</c:when>
+										<c:otherwise>
+           									<td></td>
+       	 								 </c:otherwise>
 									</c:choose>
 								</c:if></td>
 						</tr>

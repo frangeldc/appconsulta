@@ -18,16 +18,7 @@ public class FisicoService {
 		return exameClient.obterFisicoLista();
 	}
 	
-	public String showInfo() {
-		
-		String info = "";
-		
-		for(Fisico fisico : exameClient.obterFisicoLista()) {
-			info = fisico.showInfo();
-		}
-
-		return info;
-	}
-	
-	
+	public long obterQuantidadeFisico() {
+		return exameClient.obterQuantidadeFisico();
+	}		
 }

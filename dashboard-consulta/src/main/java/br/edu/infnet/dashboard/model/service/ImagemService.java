@@ -18,25 +18,7 @@ public class ImagemService {
 		return exameClient.obterImagemLista();
 	}
 	
-	public String showInfo() {
-		
-		String info = "";
-		
-		for(Imagem imagem : exameClient.obterImagemLista()) {
-			info = imagem.showInfo();
-		}
-
-		return info;
-	}
-	
-//	public float calcularValorVenda() {
-//		
-//		float valorVenda = 0;
-//		
-//		for(Imagem bebida : produtoClient.obterImagemLista()) {
-//			valorVenda = valorVenda + bebida.calcularValorVenda();
-//		}
-//		
-//		return valorVenda;
-//	}
+	public long obterQuantidadeImagem() {
+		return exameClient.obterQuantidadeImagem();
+	}	
 }

@@ -15,13 +15,25 @@ public interface IExameClient {
 
 	@GetMapping(value = "/listar")
 	public List<Exame> obterLista();
-	//mudei
+	
 	@GetMapping(value = "/listar/fisico")
 	public List<Fisico> obterFisicoLista();
-	//mudei
+	
 	@GetMapping(value = "/listar/laboratorial")
 	public List<Laboratorial> obterLaboratorialLista();
-	//mudei
+
 	@GetMapping(value = "/listar/imagem")
 	public List<Imagem> obterImagemLista();
+	
+	@GetMapping(value = "/qtde")
+	public long obterQuantidadeExame();
+	
+	@GetMapping(value = "/qtde/fisico")
+	public long obterQuantidadeFisico();
+	
+	@GetMapping(value = "/qtde/laboratorial")
+	public long obterQuantidadeLaboratorial();
+	
+	@GetMapping(value = "/qtde/imagem")
+	public long obterQuantidadeImagem();
 }

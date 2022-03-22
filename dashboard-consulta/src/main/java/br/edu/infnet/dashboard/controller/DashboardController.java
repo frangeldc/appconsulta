@@ -48,9 +48,9 @@ public class DashboardController {
 		model.addAttribute("qtdeConsultas", consultaService.obterQuantidade());
 		
 		//Informação dos exames
-		model.addAttribute("infoImagem", imagemService.showInfo());
-		model.addAttribute("infoLaboratorial", laboratorialService.showInfo());
-		model.addAttribute("infoFisico", fisicoService.showInfo());
+		model.addAttribute("qtdeImagem", imagemService.obterQuantidadeImagem());
+		model.addAttribute("qtdeLaboratorial", laboratorialService.obterQuantidadeLaboratorial());
+		model.addAttribute("qtdeFisico", fisicoService.obterQuantidadeFisico());
 
 		//recuperar o log
 		model.addAttribute("listaLog", logService.obterLista());

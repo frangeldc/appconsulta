@@ -76,7 +76,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">${qtdeConsultas}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fas fa-check fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -90,11 +90,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Imagem</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${infoImagem}</div>
+                                                Quantidade de exames de imagens</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${qtdeImagem}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-camera fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -108,11 +108,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                Laboratorial</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${infoLaboratorial}</div>
+                                                Quantidade de exames Laboratoriais</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${qtdeLaboratorial}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-flask fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -126,11 +126,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Fisico</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${infoFisico}</div>
+                                               Quantidade de exames Fisicos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${qtdeFisico}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-thermometer fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>

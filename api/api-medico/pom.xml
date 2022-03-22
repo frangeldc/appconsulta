@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.edu.infnet</groupId>
-	<artifactId>api-solicitante</artifactId>
+	<artifactId>api-medico</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-solicitante</name>
-	<description>Projeto api solicitante</description>
+	<description>Projeto api medico</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

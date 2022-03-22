@@ -17,4 +17,8 @@ public class ExameService {
 	public List<Exame> obterLista() {
 		return exameClient.obterLista();
 	}
+	
+	public long obterQuantidadeExame() {
+		return exameClient.obterQuantidadeExame();
+	}	
 }

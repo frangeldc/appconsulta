@@ -18,16 +18,7 @@ public class LaboratorialService {
 		return exameClient.obterLaboratorialLista();
 	}
 	
-	public String showInfo() {
-		
-		String info = "";
-		
-		for(Laboratorial laboratorial : exameClient.obterLaboratorialLista()) {
-			info = laboratorial.showInfo();
-		}
-
-		return info;
-	}
-	
-	
+	public long obterQuantidadeLaboratorial() {
+		return exameClient.obterQuantidadeLaboratorial();
+	}	
 }
