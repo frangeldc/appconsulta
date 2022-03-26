@@ -1,6 +1,7 @@
 package br.edu.infnet.appconsulta.model.domain;
 
 import br.edu.infnet.appconsulta.exceptions.IdadeNegativaException;
+import br.edu.infnet.appconsulta.exceptions.PrecoNegativoException;
 
 public class Laboratorial extends Exame {
 
@@ -11,8 +12,11 @@ public class Laboratorial extends Exame {
 	public Laboratorial() {
 	}
 	
-	public Laboratorial(String laudo, String nome, Double preco) {
+	public Laboratorial(String laudo, String nome, double preco) throws PrecoNegativoException {
 		super(laudo, nome, preco);
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo!");
+		}
 	}
 	
 	public String getTipoSangue() {

@@ -1,5 +1,6 @@
 package br.edu.infnet.dashboard.model.domain;
 
+import br.edu.infnet.dashboard.model.exceptions.PrecoNegativoException;
 import br.edu.infnet.dashboard.model.exceptions.AreaNulaException;
 
 public class Imagem extends Exame {
@@ -11,10 +12,12 @@ public class Imagem extends Exame {
 	public Imagem() {
 	}
 
-	public Imagem(String laudo, String nome, Double preco) {
+	public Imagem(String laudo, String nome, double preco) throws PrecoNegativoException {
 		super(laudo, nome, preco);
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo!");
+		}
 	}
-
 	public boolean isRadioativo() {
 		return radioativo;
 	}

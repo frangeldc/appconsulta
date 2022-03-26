@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import br.edu.infnet.apiconsulta.model.exceptions.PrecoNegativoException;
+
 @Entity
 @Table(name = "TExame")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -37,7 +39,7 @@ public abstract class Exame {
 	private Integer id;
 	private String laudo;
 	private String descricao;
-	private Double preco;
+	private double preco;
 
 
 	@ManyToMany(mappedBy = "exames")
@@ -54,7 +56,7 @@ public abstract class Exame {
 	public Exame() {
 	}
 
-	public Exame(String laudo, String nome, Double preco) {
+	public Exame(String laudo, String nome, double preco) {
 		super();
 		this.laudo = laudo;
 		this.descricao = nome;
@@ -73,7 +75,7 @@ public abstract class Exame {
 		return descricao;
 	}
 
-	public Double getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
@@ -89,7 +91,10 @@ public abstract class Exame {
 		this.descricao = descricao;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(double preco) throws PrecoNegativoException {
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo.");
+		}
 		this.preco = preco;
 	}
 

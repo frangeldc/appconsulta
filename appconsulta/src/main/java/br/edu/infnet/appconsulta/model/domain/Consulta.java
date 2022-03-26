@@ -23,10 +23,8 @@ public class Consulta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String tipo;
-	private LocalDateTime data; // atributo 1
-//	private List<String> receituario; // atributo 2
-	private String local;// atributo 3
-//	private String telContato;
+	private LocalDateTime data; 
+	private String local;
 
 	@OneToOne(cascade = CascadeType.DETACH) 
 	@JoinColumn(name = "idMedico")	
@@ -41,8 +39,6 @@ public class Consulta {
 
 	public Consulta() {
 		this.data = LocalDateTime.now();
-		this.tipo = "Oftalmo";
-		this.local = "Rua A";
 	}
 
 //	public Consulta(String tipo, String local) {

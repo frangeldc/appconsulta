@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import br.edu.infnet.apiconsulta.model.exceptions.IdadeNegativaException;
+import br.edu.infnet.apiconsulta.model.exceptions.PrecoNegativoException;
 
 @Entity
 @Table(name = "TLaboratorial")
@@ -16,8 +17,11 @@ public class Laboratorial extends Exame {
 	public Laboratorial() {
 	}
 	
-	public Laboratorial(String laudo, String nome, Double preco) {
+	public Laboratorial(String laudo, String nome, double preco) throws PrecoNegativoException {
 		super(laudo, nome, preco);
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo!");
+		}
 	}
 	
 	public String getTipoSangue() {

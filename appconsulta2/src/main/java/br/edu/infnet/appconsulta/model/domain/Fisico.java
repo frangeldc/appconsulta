@@ -1,14 +1,19 @@
 package br.edu.infnet.appconsulta.model.domain;
 
+import br.edu.infnet.appconsulta.exceptions.AlturaNegativaException;
 import br.edu.infnet.appconsulta.exceptions.PesoNegativoException;
+import br.edu.infnet.appconsulta.exceptions.PrecoNegativoException;
 
 public class Fisico extends Exame {
-	
+
 	public Fisico() {
 	}
-	
-	public Fisico(String laudo, String nome, Double preco) {
+
+	public Fisico(String laudo, String nome, double preco) throws PrecoNegativoException {
 		super(laudo, nome, preco);
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo!");
+		}
 	}
 
 	private float temperatura;
@@ -47,21 +52,22 @@ public class Fisico extends Exame {
 		return altura;
 	}
 
-	public void setAltura(double altura) {
+	public void setAltura(double altura)  throws AlturaNegativaException {
+		if (altura < 0) {
+			throw new AlturaNegativaException(altura, "A altura não pode ser negativa.");
+		}
 		this.altura = altura;
 	}
 
 	@Override
-	public String showInfo(){
-		return "Informacoes do exame fisico: "+super.toString()+"; pressao: "+pressao+"; peso:"+peso+"; altura: "+altura;
+	public String showInfo() {
+		return "Informacoes do exame fisico: " + super.toString() + "; pressao: " + pressao + "; peso:" + peso
+				+ "; altura: " + altura;
 	}
-	
 
-	
 	@Override
 	public String toString() {
 		return "Fisico: " + showInfo();
 	}
-	
-	
+
 }

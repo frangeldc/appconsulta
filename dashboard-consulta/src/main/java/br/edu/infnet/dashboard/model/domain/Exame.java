@@ -20,7 +20,7 @@ public abstract class Exame {
 	
 	private String laudo;
 	private String descricao;
-	private Double preco;
+	private double preco;
 //	public String tipo;
 //	public String motivo;
 //	private Boolean urgencia;
@@ -54,7 +54,7 @@ public abstract class Exame {
 		return descricao;
 	}
 
-	public Double getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
@@ -70,7 +70,7 @@ public abstract class Exame {
 		this.descricao = descricao;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 

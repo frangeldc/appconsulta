@@ -3,7 +3,9 @@ package br.edu.infnet.apiusuario.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import br.edu.infnet.apiusuario.model.exceptions.AlturaNegativaException;
 import br.edu.infnet.apiusuario.model.exceptions.PesoNegativoException;
+import br.edu.infnet.apiusuario.model.exceptions.PrecoNegativoException;
 
 @Entity
 @Table(name = "TFisico")
@@ -12,8 +14,11 @@ public class Fisico extends Exame {
 	public Fisico() {
 	}
 	
-	public Fisico(String laudo, String nome, Double preco) {
+	public Fisico(String laudo, String nome, double preco) throws PrecoNegativoException {
 		super(laudo, nome, preco);
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo!");
+		}
 	}
 
 	private float temperatura;
@@ -53,7 +58,10 @@ public class Fisico extends Exame {
 		return altura;
 	}
 
-	public void setAltura(double altura) {
+	public void setAltura(double altura) throws AlturaNegativaException {
+		if (altura < 0) {
+			throw new AlturaNegativaException(altura, "A altura não pode ser negativa.");
+		}
 		this.altura = altura;
 	}
 

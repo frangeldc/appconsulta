@@ -33,7 +33,7 @@ public abstract class Exame {
 	
 	private String laudo;
 	private String descricao;
-	private Double preco;
+	private double preco;
 
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
@@ -44,7 +44,7 @@ public abstract class Exame {
 	public Exame() {
 	}
 
-	public Exame(String laudo, String nome, Double preco) {
+	public Exame(String laudo, String nome, double preco) {
 		super();
 		this.laudo = laudo;
 		this.descricao = nome;
@@ -63,7 +63,7 @@ public abstract class Exame {
 		return descricao;
 	}
 
-	public Double getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
@@ -79,7 +79,7 @@ public abstract class Exame {
 		this.descricao = descricao;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 

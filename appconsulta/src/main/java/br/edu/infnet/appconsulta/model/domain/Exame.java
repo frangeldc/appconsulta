@@ -16,6 +16,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import br.edu.infnet.appconsulta.exceptions.PesoNegativoException;
+import br.edu.infnet.appconsulta.exceptions.PrecoNegativoException;
+
 @Entity
 @Table(name = "TExame")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -26,7 +29,7 @@ public abstract class Exame {
 	private Integer id;
 	private String laudo;// atributo 1
 	private String descricao;// atributo 2
-	private Double preco;// atributo 3
+	private double preco;// atributo 3
 //	public String tipo;
 //	public String motivo;
 //	private Boolean urgencia;
@@ -69,7 +72,7 @@ public abstract class Exame {
 		return descricao;
 	}
 
-	public Double getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
@@ -85,7 +88,10 @@ public abstract class Exame {
 		this.descricao = descricao;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(double preco) throws PrecoNegativoException {
+		if (preco < 0) {
+			throw new PrecoNegativoException(preco, "O preço não pode ser negativo.");
+		}
 		this.preco = preco;
 	}
 
